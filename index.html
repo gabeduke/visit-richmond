@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Guide</title>
+    <style>
+        /* Add CSS to make iframes responsive and add a border */
+        .responsive-iframe {
+            width: 100%;
+            height: 450px; /* Adjust the height as needed */
+            border: 20px solid #ccc; /* Example border style */
+            box-sizing: border-box; /* Ensures the border is included in the width/height calculations */
+        }
+        /* Optional: Ensure the body has no margin for full-width effect */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+        /* Style for the "return to top" button */
+        .top-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Welcome to Richond!</h1>
+    <h2>Places to Visit</h2>
+    <!-- Embed Google Map -->
+    <iframe class="responsive-iframe" src="https://www.google.com/maps/d/embed?mid=1DSpcZ0deU4V58Q1MMNzztG5nvKFMgsU&ehbc=2E312F" width="640" height="480"></iframe>
+    
+    <h2>Things to Do</h2>
+    <!-- Embed Google Spreadsheet -->
+    <iframe class="responsive-iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzpT8iKdlE6fng0Ysf-bfPNLxFmELIlzL-vD166U56_EYa7VTb2Dmz3P-OlxgKkZbeVIqIaMCeGy3G/pubhtml?widget=true&amp;headers=false"></iframe>
+<!-- Add this right before the closing </body> tag -->
+<a href="#" class="top-link" id="return-to-top">Return to Top</a>
+
+<script>
+    // Get the button
+    var mybutton = document.getElementById("return-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", function(){
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    });
+</script>
+
+</body>
+</html>
